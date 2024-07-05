@@ -88,9 +88,9 @@ public class AuthorController {
             @ApiResponse(responseCode = "400", description = "Bad Request, Validation error",
                     content = { @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class) )}),
             @ApiResponse(responseCode = "401", description = "Unauthorized",
-                    content = { @Content(mediaType = "application/json")}),
+                    content = { @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class))}),
             @ApiResponse(responseCode = "404", description = "Author not found",
-                    content = { @Content(mediaType = "application/json")}),
+                    content = { @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class))}),
             @ApiResponse(responseCode = "500", description = "Internal Server Error",
                     content = { @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class))})
     })
@@ -105,9 +105,11 @@ public class AuthorController {
             @ApiResponse(responseCode = "204", description = "Author deleted",
                     content = { @Content(mediaType = "application/json") }) ,
             @ApiResponse(responseCode = "401", description = "Unauthorized",
-                    content = { @Content(mediaType = "application/json")}),
+                    content = { @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class))}),
             @ApiResponse(responseCode = "404", description = "Author not found",
-                    content = { @Content(mediaType = "application/json")})
+                    content = { @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class))}),
+            @ApiResponse(responseCode = "500", description = "Internal Server Error",
+                    content = { @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class))})
 
     })
 
