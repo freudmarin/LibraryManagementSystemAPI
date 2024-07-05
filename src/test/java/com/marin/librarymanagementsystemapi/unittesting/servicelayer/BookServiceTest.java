@@ -81,19 +81,12 @@ public class BookServiceTest {
 
     @Test
     void testGetBookById() {
-        Book book = new Book();
-        book.setId(1L);
-        book.setTitle("Test Book");
-        book.setDescription("Test Description");
-        book.setIsbn("1234567890");
-
-
-        when(bookRepository.findById(1L)).thenReturn(Optional.of(book));
+        when(bookRepository.findById(1L)).thenReturn(Optional.of(book1));
         BookReadDTO bookDTO = bookServiceImpl.getBookById(1L);
 
         assertNotNull(bookDTO);
-        assertEquals("Test Book", bookDTO.getTitle());
-        assertEquals("Test Description", bookDTO.getDescription());
+        assertEquals("Test Book 1", bookDTO.getTitle());
+        assertEquals("Test Description 1", bookDTO.getDescription());
         assertEquals("1234567890", bookDTO.getIsbn());
     }
 
@@ -170,11 +163,6 @@ public class BookServiceTest {
 
     @Test
     void testUpdateBook_BookNotFound() {
-        BookUpdateDTO bookUpdateDTO = new BookUpdateDTO();
-        bookUpdateDTO.setTitle("New Title");
-        bookUpdateDTO.setDescription("New Description");
-        bookUpdateDTO.setIsbn("1234567890");
-
         when(authorRepository.findById(1L)).thenReturn(Optional.of(author1));
         when(bookRepository.findById(1L)).thenReturn(Optional.empty());
 
