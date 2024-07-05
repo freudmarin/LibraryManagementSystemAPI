@@ -44,7 +44,7 @@ The API supports operations such as creating, retrieving, updating, and deleting
 2. **Navigate to Project Directory** 
 3. **Open the project in your IDE (IntelliJ IDEA, Eclipse, etc.)**
 4. **Clean and build the project using Maven**
-    mvn clean compile
+    mvn clean compile (MapStruct will generate the mapper classes  at -> target/generated-sources/annotations during the build process, DTOMappingsImpl.java is the generated class)
 5. Connect to postgres database
     - Create a database named `LibraryManagementSystem`
     - Update the 'application.properties' file with your database credentials:
