@@ -51,7 +51,7 @@ The API supports operations such as creating, retrieving, updating, and deleting
         - `spring.datasource.url=jdbc:postgresql://localhost:5432/LibraryManagementSystem`
         - `spring.datasource.username=your_username`
         - `spring.datasource.password=your_password`
-    - Spring Boot will run the schema.sql and data.sql scripts to create the necessary tables and populate them with sample data. 
+    - Spring Boot will run the schema.sql script to create the necessary tables and populate them with sample data. 
 6. **Run the Application** mvn spring-boot:run
    The application will start and be accessible at `http://localhost:8080`.
 7. **Run the Tests** mvn test
