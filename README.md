@@ -34,7 +34,7 @@ The API supports operations such as creating, retrieving, updating, and deleting
 
 ## Assumptions
 
-- ISBN is unique for each book. For handling validation of ISBNs a custom annotation `@ValidISBN` is used.
+- ISBN is unique for each book. For handling validation of ISBNs a custom annotation `@UniqueIsbn` is used.
 - For integration testing, an in-memory H2 database is used to simulate the behavior of a real database. Another schema is created for testing purposes.
 - The list of books for a given author in not displayed in the response when retrieving an author. fetch = FetchType.LAZY is used to avoid loading all books when retrieving an author.
 
