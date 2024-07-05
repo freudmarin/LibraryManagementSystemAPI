@@ -86,7 +86,7 @@ public class AuthorControllerTest {
         mockMvc.perform(post("/api/v1/authors")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(new ObjectMapper().writeValueAsString(authorWriteDTO)))
-                .andExpect(status().isOk())
+                .andExpect(status().isCreated())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.name").value("Author 1"))
                 .andExpect(jsonPath("$.bio").value("Bio1"));

@@ -178,6 +178,7 @@ public class BookServiceTest {
 
     @Test
     void testDeleteBook() {
+        when(bookRepository.findById(1L)).thenReturn(Optional.of(book1));
         bookServiceImpl.deleteBook(1L);
         verify(bookRepository, times(1)).deleteById(1L);
     }

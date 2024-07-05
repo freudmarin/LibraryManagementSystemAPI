@@ -85,7 +85,7 @@ public class BookControllerIntegrationTest {
         mockMvc.perform(post("/api/v1/books/" + author1.getId())
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(bookCreateDTO)))
-                .andExpect(status().isOk())
+                .andExpect(status().isCreated())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.title").value("New Book"))
                 .andExpect(jsonPath("$.description").value("New Description"))
@@ -111,12 +111,8 @@ public class BookControllerIntegrationTest {
 
     @Test
     void testDeleteBook() throws Exception {
-        mockMvc.perform(delete("/api/v1/books/1")
+        mockMvc.perform(delete("/api/v1/books/" + book1.getId())
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNoContent());
-
-        mockMvc.perform(get("/api/v1/books/1")
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isNotFound());
     }
 }

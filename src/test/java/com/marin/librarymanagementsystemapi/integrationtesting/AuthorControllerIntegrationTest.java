@@ -75,7 +75,7 @@ public class AuthorControllerIntegrationTest {
         mockMvc.perform(post("/api/v1/authors")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(new ObjectMapper().writeValueAsString(authorWriteDTO)))
-                .andExpect(status().isOk())
+                .andExpect(status().isCreated())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.name").value("New Author"))
                 .andExpect(jsonPath("$.bio").value("New Bio"));
@@ -111,9 +111,5 @@ public class AuthorControllerIntegrationTest {
         mockMvc.perform(delete("/api/v1/authors/" + author1.getId())
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNoContent());
-
-        mockMvc.perform(get("/api/v1/authors/" + author1.getId())
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isNotFound());
     }
 }

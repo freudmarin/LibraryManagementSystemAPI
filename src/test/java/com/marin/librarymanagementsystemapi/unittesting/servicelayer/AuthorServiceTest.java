@@ -104,6 +104,7 @@ public class AuthorServiceTest {
 
     @Test
     void testDeleteBook() {
+        when(authorRepository.findById(1L)).thenReturn(Optional.of(author1));
         authorServiceImpl.deleteAuthor(1L);
         verify(authorRepository, times(1)).deleteById(1L);
     }
