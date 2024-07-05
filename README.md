@@ -47,7 +47,11 @@ The API supports operations such as creating, retrieving, updating, and deleting
     mvn clean compile
 5. Connect to postgres database
     - Create a database named `LibraryManagementSystem`
-    - Update the `application.properties` file with your database credentials
+    - Update the 'application.properties' file with your database credentials:
+        - `spring.datasource.url=jdbc:postgresql://localhost:5432/LibraryManagementSystem`
+        - `spring.datasource.username=your_username`
+        - `spring.datasource.password=your_password`
+    - Spring Boot will run the schema.sql and data.sql scripts to create the necessary tables and populate them with sample data.
     - Run the application 
 6. **Run the Application** mvn spring-boot:run
    The application will start and be accessible at `http://localhost:8080`.
