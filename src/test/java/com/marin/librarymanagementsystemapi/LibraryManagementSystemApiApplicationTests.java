@@ -2,12 +2,13 @@ package com.marin.librarymanagementsystemapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 
-@SpringBootTest
+@ActiveProfiles("test")
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class LibraryManagementSystemApiApplicationTests {
 
 	@Test
 	void contextLoads() {
 	}
-
 }
