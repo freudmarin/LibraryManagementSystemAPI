@@ -1,6 +1,6 @@
 package com.marin.librarymanagementsystemapi.dtos;
 
-import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +12,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class AuthorWriteDTO {
 
-    @NotEmpty(message = "Name cannot be empty")
+    @NotBlank(message = "Name cannot be empty")
     private String name;
     private String bio;
 
