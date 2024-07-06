@@ -6,6 +6,7 @@ The API supports operations such as creating, retrieving, updating, and deleting
 - **Java 21**:
 - **Spring Boot v3.3.1**:
 - **Maven**:
+- **PostgreSQL**
 - **JUnit and Mockito**:
 - **MockMvc**: Used for Unit and Integration Testing of presentation layer (controllers)
 - **Spring Security**: For securing the application via Basic Authentication.
