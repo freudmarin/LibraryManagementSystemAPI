@@ -31,6 +31,9 @@ public class UniqueIsbnValidator implements ConstraintValidator<UniqueIsbn, Stri
         if (currentBookId == null) {
             return !bookRepository.existsByIsbn(isbn);
         }
+
+        //update-scenario
+
         return !bookRepository.existsByIsbnAndIdNot(isbn, currentBookId);
     }
 }
