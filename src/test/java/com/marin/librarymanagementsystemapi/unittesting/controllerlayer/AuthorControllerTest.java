@@ -14,7 +14,6 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
-import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -54,7 +53,6 @@ public class AuthorControllerTest {
     }
 
     @Test
-    @WithMockUser(username = "marin", roles = {"ADMIN"})
     void testGetAllAuthors() throws Exception {
         List<AuthorReadDTO> authorList = Arrays.asList(authorReadDTO1, authorReadDTO2);
         when(authorService.getAllAuthors()).thenReturn(authorList);
@@ -68,7 +66,6 @@ public class AuthorControllerTest {
     }
 
     @Test
-    @WithMockUser(username = "marin", roles = {"ADMIN"})
     void testGetAuthorById() throws Exception {
         when(authorService.getAuthorById(1L)).thenReturn(authorReadDTO1);
 
