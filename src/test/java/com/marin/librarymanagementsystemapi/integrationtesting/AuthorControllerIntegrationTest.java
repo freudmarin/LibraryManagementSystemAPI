@@ -29,7 +29,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @Transactional
 @Sql(scripts = "/schema.sql")
 @Import(TestSecurityConfig.class)
-public class AuthorControllerIntegrationTest {
+class AuthorControllerIntegrationTest {
 
     @Autowired
     private MockMvc mockMvc;
