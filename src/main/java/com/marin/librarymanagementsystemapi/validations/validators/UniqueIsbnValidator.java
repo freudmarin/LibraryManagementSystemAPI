@@ -33,7 +33,8 @@ public class UniqueIsbnValidator implements ConstraintValidator<UniqueIsbn, Stri
         }
 
         //update-scenario
-
+        // we consider the isbn unique if it is not used by any other book
+        // or it is used by the current book
         return !bookRepository.existsByIsbnAndIdNot(isbn, currentBookId);
     }
 }
