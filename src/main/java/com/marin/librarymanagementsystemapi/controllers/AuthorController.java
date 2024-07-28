@@ -39,7 +39,7 @@ public class AuthorController {
                     content = { @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class))})
 
     })
-    @GetMapping()
+    @GetMapping
     public ResponseEntity<List<AuthorReadDTO>> getAllAuthors() {
         return new ResponseEntity<>(authorService.getAllAuthors(), HttpStatus.OK);
     }
@@ -75,7 +75,7 @@ public class AuthorController {
             @ApiResponse(responseCode = "500", description = "Internal Server Error",
                     content = { @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class))})
     })
-    @PostMapping()
+    @PostMapping
     public ResponseEntity<AuthorReadDTO> createAuthor(@Valid @RequestBody AuthorWriteDTO authorWriteDTO) {
         return new ResponseEntity<>(authorService.createAuthor(authorWriteDTO), HttpStatus.CREATED);
     }

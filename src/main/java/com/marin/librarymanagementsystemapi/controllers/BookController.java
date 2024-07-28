@@ -40,7 +40,7 @@ public class BookController {
                     content = { @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class))})
 
     })
-    @GetMapping()
+    @GetMapping
     public ResponseEntity<List<BookReadDTO>> getAllBooks() {
         return new ResponseEntity<>(bookService.getAllBooks(), HttpStatus.OK);
     }
