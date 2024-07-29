@@ -49,6 +49,6 @@ public class AuthorServiceImpl implements AuthorService {
     public void deleteAuthor(Long id) {
         Author author = authorRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Author with id " + id + " was not found in the system, hence cannot be deleted."));
-        authorRepository.deleteById(author.getId());
+        authorRepository.delete(author);
     }
 }
